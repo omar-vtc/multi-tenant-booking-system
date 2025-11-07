@@ -28,7 +28,6 @@ export class UsersController {
       body.name,
     );
 
-    // Normal users only → role = 'user'
     return this.authService.login({ ...user, role: 'user' });
   }
 }

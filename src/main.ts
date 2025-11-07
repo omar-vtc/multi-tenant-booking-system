@@ -14,7 +14,6 @@ async function bootstrap() {
     console.log('Headers:', req.headers);
     next();
   });
-  // ✅ Initialize Passport globally
   app.use(passport.initialize());
 
   await app.listen(process.env.PORT || 3000);

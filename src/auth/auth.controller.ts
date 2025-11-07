@@ -9,7 +9,6 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() body: { email: string; password: string }) {
-    // Tries both users and admins automatically
     return this.authService.login(
       await this.authService.validateUser(body.email, body.password),
     );

@@ -12,11 +12,11 @@ export class Availability {
   spaceId: string;
 
   @Column('int')
-  weekday: number; // 1..7 (ISO)
+  weekday: number;
 
   @Column('time')
-  startTime: string; // '09:00:00'
+  startTime: string;
 
   @Column('time')
-  endTime: string; // '17:00:00'
+  endTime: string;
 }

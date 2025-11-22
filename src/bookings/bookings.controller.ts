@@ -5,7 +5,7 @@ import { Controller, Post, Request, Body, Get } from '@nestjs/common';
 import { BookingsService } from './bookings.service';
 // import { AuthGuard } from '@nestjs/passport';
 
-@Controller('api')
+@Controller()
 export class BookingsController {
   constructor(private svc: BookingsService) {}
 
@@ -13,11 +13,11 @@ export class BookingsController {
   //   @UseGuards(AuthGuard('jwt'))
   async create(
     @Request() req: any,
-    @Body() body: { startAt: string; endAt: string }, // only startAt and endAt
+    @Body() body: { startAt: string; endAt: string },
   ) {
     const tenantId = req.params?.tenantId || req.user.tenantId;
-    const spaceId = req.params?.spaceId; // get from URL param
-    const userId = req.user.userId || req.user.sub;
+    const spaceId = req.params?.spaceId;
+    const userId = '3cfdfb8f-4d37-48da-bbfa-49ded1b47e7b'; //req.user.userId || req.user.sub;
     const startAt = new Date(body.startAt);
     const endAt = new Date(body.endAt);
 
